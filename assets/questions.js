@@ -8,5 +8,8 @@ var questions = [
     question: "JavaScript is awesome.",
     choices: ["True", "False"],
     answer: "True"
-  }
+  }/*,
+  {
+
+  }*/
 ]

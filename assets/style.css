@@ -1,3 +1,14 @@
+button{
+  background-color: blueviolet!important;
+  margin: 3px;
+  border: 1px blueviolet solid!important;
+  border-radius: 5px;
+}
+
+button:hover{
+  opacity: 75%;
+}
+
 .hide {
-  display: none;
+  display: none!important;
 }
