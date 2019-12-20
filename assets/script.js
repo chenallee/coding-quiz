@@ -7,7 +7,8 @@ var startScreenEl = document.querySelector("#start-screen");
 //quiz-content (event delegation)
 var quizScreenEl = document.querySelector("#quiz-content");
 //
-//var questionTitleEl = document.querySelector("#question-title");
+
+var headerEl = document.querySelector("header");
 //time-left
 var timeLeftEl = document.querySelector("#time-left");
 
@@ -17,6 +18,11 @@ var postGameScreenEl = document.querySelector("#post-game-screen");
 var userScoreEl = document.querySelector("#user-score");
 //play-again-btn
 var playAgainBtnEl = document.querySelector("#play-again-btn");
+
+//answer-info
+var answerInfoEl = document.querySelector("#answer-info");
+//answer-info-text
+var answerInfoTextEl = document.querySelector("#answer-info-text");
 
 /* ----- create variables for game logic: ---------------------------------------------------------------------------------- */
 //timerIntervalId - set timer to variable so we can stop it
@@ -31,7 +37,7 @@ var secondsLeft;
 function startGameHandler(event) {
   event.preventDefault();
   // set secondsLeft variable to starting time (300 seconds = 5 minutes)
-  secondsLeft = 10;
+  secondsLeft = (questions.length) * 15;
   // write secondsLeft to the page
   timeLeftEl.textContent = secondsLeft;
 
@@ -40,6 +46,7 @@ function startGameHandler(event) {
   // write score to the page (optional?)***
 
   // hide start-screen element && post-game-screen
+  headerEl.classList.remove("invisible");
   startScreenEl.classList.add("hide");
   postGameScreenEl.classList.add("hide");
   // show quiz-content element
@@ -105,8 +112,29 @@ function userAnswerHandler(event) {
     //check to see if choice picked is same as questions correct answer
     if (elementClicked.textContent == questions[questionAnswered].answer) {
       score++;
+      //change info text to correct w/ class text-sucess
+      answerInfoTextEl.textContent = "Correct!";
+      answerInfoTextEl.classList.add("text-success");
+      //remove hide class from answer info
+      answerInfoEl.classList.remove("hide");
+      //on timeout add hide class to answer info
+      setTimeout(function(){
+        answerInfoTextEl.classList.remove("text-success");
+        answerInfoEl.classList.add("hide");
+      }, 1000);
     } else { 
-      console.log("wrong!");
+      //console.log("wrong!");
+      secondsLeft = secondsLeft - 15;
+      //change info text to wrong w/ class text-danger
+      answerInfoTextEl.textContent = "Wrong!";
+      answerInfoTextEl.classList.add("text-danger");
+      //remove hide class from answer info
+      answerInfoEl.classList.remove("hide");
+      //on timeout add hide class to answer info
+      setTimeout(function(){
+        answerInfoTextEl.classList.remove("text-danger");
+        answerInfoEl.classList.add("hide");
+      }, 1000);
     }
     //if yes, increase score++
     //if no, subtract time from secondsLeft
@@ -134,7 +162,8 @@ function stopGame(event) {
   //show post-game-screen
   postGameScreenEl.classList.remove("hide");
   //print out user score
-  userScoreEl.textContent = score;
+  score = (score/questions.length) * 100;
+  userScoreEl.textContent = score + "%";
 
 }
 /* add event listeners ----------------------------------------------------------------------------------------------------- */

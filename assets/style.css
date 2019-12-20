@@ -1,3 +1,22 @@
+body {
+  background-color: lavenderblush;
+  color:#383838;
+}
+
+a:hover{
+  opacity: 75%;
+  color: blueviolet;
+}
+
+a:active{
+  opacity: 25%;
+  color: blueviolet;
+}
+
+.purple-text{
+color: blueviolet;
+}
+
 button{
   background-color: blueviolet!important;
   margin: 3px;
@@ -7,6 +26,10 @@ button{
 
 button:hover{
   opacity: 75%;
+}
+
+.invisible {
+  visibility: hidden;
 }
 
 .hide {

@@ -11,27 +11,57 @@
 </head>
 
 <body>
-  <header class="">
-    <h3 id="">Time Left: <span id="time-left"></span></h3>
+  <header class="mb-5 px-3 invisible">
+    <div class="row">
+      <div class="col-6 ">
+        <a href="#" id="high-scores" class="purple-text">View Highscores</a>
+      </div>
+      <div class=" purple-text col-6 font-weight-bold text-right">Time Left: <span id="time-left"></span></div>
+    </div>
   </header>
   <main class="container justify-content-center">
 
     <!-- start screen -->
-    <div id="start-screen" class="align-items-center">
-      <h1 class="">Play the game!</h1>
-      <button id="start-game-btn" class="btn btn-primary">Start Game</button>
+    <div class="row">
+      <div class="col-12">
+        <div id="start-screen" class="text-center">
+          <h1 class="">Play the game!</h1>
+          <button id="start-game-btn" class="btn btn-primary">Start Game</button>
+        </div>
+      </div>
     </div>
 
     <!-- quiz content -->
-    <div id="quiz-content" class="d-flex flex-column hide">
-      <h2 class ="" id="question-title"></h2>
-      
+    <div class="row">
+      <div class="col-12 col-md-8 col-xl-6 mx-auto ">
+        <div id="quiz-content" class="m-auto d-flex flex-column hide">
+          <h2 class="" id="question-title"></h2>
+
+        </div>
+      </div>
     </div>
+
     <!-- post-game info -->
-    <div id="post-game-screen" class="hide">
-      <h2 class="">Post Game Screen</h2>
-      <p>Your Score: <span id="user-score"></span></p>
-      <button id="play-again-btn">Play Again?</button>
+    <div class="row">
+      <div class="col-12">
+        <div id="post-game-screen" class="text-center hide">
+          <h2 class="">Post Game Screen</h2>
+          <p>Your Score: <span id="user-score"></span></p>
+          <button id="play-again-btn" class="btn btn-primary">Play Again?</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- add high score form -->
+
+    <!-- high scores screen -->
+
+    <!-- answers information -->
+    <div class="row">
+      <div id="answer-info" class="col-12 col-md-8 col-xl-6 mx-auto hide">
+        <hr>
+        <div id="answer-info-text" class=""></div>
+      </div>
     </div>
 
   </main>
