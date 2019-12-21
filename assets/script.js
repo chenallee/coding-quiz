@@ -236,9 +236,9 @@ function showHighscores(){
 
     //i want to alternate bg of each li so i'll check if i is even
     if( i % 2 === 0){
-      li.classList.add("list-group-item-light");
+      li.classList.add("list-group-item-light", "high-score-even");
     } else {
-      li.classList.add("list-group-item-secondary");
+      li.classList.add("list-group-item-secondary", "high-score-odd");
     }
 
 

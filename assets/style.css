@@ -35,3 +35,23 @@ button:hover{
 .hide {
   display: none!important;
 }
+
+/* .high-score-div{
+  background-color: lavender;
+} */
+
+.high-score-even {
+  padding: 3px;
+  /* background-color: white;
+  color: blueviolet; */
+  /* opacity: 50%;  */
+
+}
+
+.high-score-odd{
+  padding: 3px;
+  /* background-color: blueviolet;
+  color: white; */
+  /* opacity: 50% ; */
+
+}
