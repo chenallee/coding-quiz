@@ -14,7 +14,7 @@
   <header class="mb-5 px-3 invisible">
     <div class="row">
       <div class="col-6 ">
-        <a href="#" id="high-scores" class="purple-text">View Highscores</a>
+        <a href="#" id="view-highscores" class="purple-text">View Highscores</a>
       </div>
       <div class=" purple-text col-6 font-weight-bold text-right">Time Left: <span id="time-left"></span></div>
     </div>
@@ -43,18 +43,42 @@
 
     <!-- post-game info -->
     <div class="row">
-      <div class="col-12">
-        <div id="post-game-screen" class="text-center hide">
-          <h2 class="">Post Game Screen</h2>
+      
+        <div id="post-game-screen" class="col-12 text-center hide">
+          <h2 class="">You Finished!</h2>
           <p>Your Score: <span id="user-score"></span></p>
-          <button id="play-again-btn" class="btn btn-primary">Play Again?</button>
+          <form id="game-end-form" class=" justify-content-center form-inline mx-auto " method="POST">
+            <input type="text" id="user-initials" class="form-inline form-control w-50 w-lg-25"
+              placeholder="Input Initials!">
+
+            <button type="submit" id="add-highscore-btn" class="form-inline btn btn-primary">Add Highscore</button>
+
+          </form>
         </div>
-      </div>
+
+        <div id="high-scores-display" class="col-12 col-md-8 col-xl-6 mx-auto hide">
+          <h2 class="mx-auto text-center">High Scores:</h2>
+          <div id="high-scores-list" class="w-50 mx-auto">
+          </div>
+        </div>
+
+        <div id="" class="col-12 text-center">
+          <button id="play-again-btn" class="hide btn btn-primary mx-auto">Play Again?</button>
+          <button id="clear-highscore" class="hide btn btn-primary mx-auto">Clear High Scores</button>
+        </div>
     </div>
 
-    <!-- add high score form -->
-
     <!-- high scores screen -->
+    <div class="row">
+      <div id="high-scores-display" class="col-12 col-md-8 col-xl-6 mx-auto hide">
+        <h2 class="mx-auto text-center">High Scores:</h2>
+        <div id="high-scores-list" class="w-50 mx-auto">
+
+        </div>
+        <button id="play-again-btn" class="btn btn-primary mx-auto">Play Again?</button>
+      </div>
+
+    </div>
 
     <!-- answers information -->
     <div class="row">
